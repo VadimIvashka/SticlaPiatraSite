@@ -55,9 +55,9 @@ app.post('/send-email', validateData, async (req, res) => {
     await transporter.sendMail({
       from: process.env.EMAIL, // Адрес отправителя
       to: process.env.EMAIL,   // Адрес получателя
-      subject: `Заявка от ${name}`,
-      html: `<p><strong>Телефон:</strong> ${phone}</p>
-            <p><strong>Имя:</strong> ${name} оставил заявку</p>`,
+      subject: `Cerere din ${name}`,
+      html: `<p><strong>Telefon:</strong> ${phone}</p>
+            <p><strong>Numele:</strong> ${name} a lăsat o cerere</p>`,
     });
 
     res.send('Сообщение отправлено!');
@@ -85,8 +85,8 @@ app.post('/send-tel', validateData, async (req, res) => {
     await transporter.sendMail({
       from: process.env.EMAIL, // Адрес отправителя
       to: process.env.EMAIL,   // Адрес получателя
-      subject: `Номер телефона`,
-      html: `<p><strong>Телефон:</strong> ${phon}</p>`,
+      subject: `Număr de telefon`,
+      html: `<p><strong>Telefon:</strong> ${phon}</p>`,
     });
 
     res.send('Сообщение отправлено!');
